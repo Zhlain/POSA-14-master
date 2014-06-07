@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+// Import the necessary Java synchronization and scheduling classes.
+
+>>>>>>> upstream/master
 package edu.vuum.mocca;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -16,6 +21,7 @@ class SimpleAtomicLong
      * The value that's manipulated atomically via the methods.
      */
     private long mValue;
+<<<<<<< HEAD
     
     /**
      * The ReentrantReadWriteLock used to serialize access to mValue.
@@ -24,10 +30,19 @@ class SimpleAtomicLong
     // TODO -- you fill in here by replacing the null with an
     // initialization of ReentrantReadWriteLock.
     private ReentrantReadWriteLock mRWLock = null;
+=======
+
+
+    /**
+     * The ReentrantReadWriteLock used to serialize access to mValue.
+     */
+    // TODO - add the implementation
+>>>>>>> upstream/master
 
     /**
      * Creates a new SimpleAtomicLong with the given initial value.
      */
+<<<<<<< HEAD
     public SimpleAtomicLong(long initialValue)
     {
         // TODO -- you fill in here
@@ -45,6 +60,19 @@ class SimpleAtomicLong
         // TODO -- you fill in here
 
         return value;
+=======
+    public SimpleAtomicLong(long initialValue) {
+        // TODO - you fill in here
+    }
+
+    /**
+     * @brief Gets the current value
+     * 
+     * @returns The current value
+     */
+    public long get() {
+        // TODO - you fill in here
+>>>>>>> upstream/master
     }
 
     /**
@@ -52,6 +80,7 @@ class SimpleAtomicLong
      *
      * @returns the updated value
      */
+<<<<<<< HEAD
     public long decrementAndGet()
     {
         long value = 0;
@@ -59,6 +88,10 @@ class SimpleAtomicLong
         // TODO -- you fill in here
 
         return value;
+=======
+    public long decrementAndGet() {
+        // TODO - you fill in here
+>>>>>>> upstream/master
     }
 
     /**
@@ -66,6 +99,7 @@ class SimpleAtomicLong
      *
      * @returns the previous value
      */
+<<<<<<< HEAD
     public long getAndIncrement()
     {
         long value = 0;
@@ -73,6 +107,10 @@ class SimpleAtomicLong
         // TODO -- you fill in here
 
         return value;
+=======
+    public long getAndIncrement() {
+        // TODO - you fill in here
+>>>>>>> upstream/master
     }
 
     /**
@@ -80,6 +118,7 @@ class SimpleAtomicLong
      *
      * @returns the previous value
      */
+<<<<<<< HEAD
     public long getAndDecrement()
     {
         long value = 0;
@@ -87,6 +126,10 @@ class SimpleAtomicLong
         // TODO -- you fill in here
 
         return value;
+=======
+    public long getAndDecrement() {
+        // TODO - you fill in here
+>>>>>>> upstream/master
     }
 
     /**
@@ -94,6 +137,7 @@ class SimpleAtomicLong
      *
      * @returns the updated value
      */
+<<<<<<< HEAD
     public long incrementAndGet()
     {
         long value = 0;
@@ -101,6 +145,10 @@ class SimpleAtomicLong
         // TODO -- you fill in here
 
         return value;
+=======
+    public long incrementAndGet() {
+        // TODO - you fill in here
+>>>>>>> upstream/master
     }
 }
 

@@ -12,6 +12,12 @@ package edu.vuum.mocca;
  */
 public abstract class PlatformStrategy
 {
+<<<<<<< HEAD
+=======
+    /** Number of threads used to play ping-pong. */
+    protected static final int NUMBER_OF_THREADS = 2;
+
+>>>>>>> upstream/master
     /** The singleton @a PlatformStrategy instance. */
     private static PlatformStrategy mUniqueInstance = null;
 

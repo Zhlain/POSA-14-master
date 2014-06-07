@@ -276,7 +276,11 @@ public class ThreadedDownloads extends Activity {
     }
     
     /**
+<<<<<<< HEAD
      * @class MyHandler
+=======
+     * @class MessageHandler
+>>>>>>> upstream/master
      *
      * @brief A static inner class that inherits from Handler and uses
      *        its handleMessage() hook method to process Messages sent
@@ -297,7 +301,11 @@ public class ThreadedDownloads extends Activity {
         /**
          * Allows Activity to be garbage collected properly.
          */
+<<<<<<< HEAD
         WeakReference<ThreadedDownloads> mActivity;
+=======
+        private WeakReference<ThreadedDownloads> mActivity;
+>>>>>>> upstream/master
 
         /**
          * Class constructor constructs mActivity as weak reference
@@ -306,10 +314,16 @@ public class ThreadedDownloads extends Activity {
          * @param activity
          *            The corresponding activity
          */
+<<<<<<< HEAD
         MessageHandler(ThreadedDownloads activity) {
             mActivity = new WeakReference<ThreadedDownloads>(activity);
         }
 
+=======
+        public MessageHandler(ThreadedDownloads activity) {
+            mActivity = new WeakReference<ThreadedDownloads>(activity);
+        }
+>>>>>>> upstream/master
         /**
          * Process the specified Messages passed to MessageHandler in
          * the UI Thread. These Messages instruct the Handler to start
@@ -322,27 +336,44 @@ public class ThreadedDownloads extends Activity {
              * Check to see if the activity still exists and return if
              * not.
              */
+<<<<<<< HEAD
             if (mActivity.get() == null) 
+=======
+            ThreadedDownloads activity = mActivity.get();
+            if (activity == null) 
+>>>>>>> upstream/master
                 return;                
 
             switch (msg.what) {
 
             case SHOW_DIALOG:
+<<<<<<< HEAD
                 mActivity.get().showDialog("downloading via Handlers and Messages");
+=======
+                activity.showDialog("downloading via Handlers and Messages");
+>>>>>>> upstream/master
                 break;
 
             case DISMISS_DIALOG:
                 /**
                  * Dismiss the progress dialog.
                  */
+<<<<<<< HEAD
                 mActivity.get().dismissDialog();
+=======
+                activity.dismissDialog();
+>>>>>>> upstream/master
                 break;
 
             case DISPLAY_IMAGE:
                 /**
                  * Display the downloaded image to the user.
                  */
+<<<<<<< HEAD
                 mActivity.get().displayImage((Bitmap) msg.obj);
+=======
+                activity.displayImage((Bitmap) msg.obj);
+>>>>>>> upstream/master
                 break;
             }
         }

@@ -17,12 +17,17 @@ public class ConsolePlatformStrategy extends PlatformStrategy
      * Latch to decrement each time a thread exits to control when the
      * play() method returns.
      */
+<<<<<<< HEAD
     private static CountDownLatch mLatch = new CountDownLatch(2);
+=======
+    private static CountDownLatch mLatch = null;
+>>>>>>> upstream/master
 
     /** Contains information for outputting to console window. */
     PrintStream mOutput;
 
     /** Ctor. */
+<<<<<<< HEAD
     ConsolePlatformStrategy(Object output) 
     {
         mOutput = (PrintStream) output;
@@ -53,10 +58,38 @@ public class ConsolePlatformStrategy extends PlatformStrategy
         try {
             mLatch.await();
         } catch(java.lang.InterruptedException e) {
+=======
+    ConsolePlatformStrategy(Object output) {
+        mOutput = (PrintStream) output;
+    }
+
+    /** Do any initialization needed to start a new game. */
+    public void begin() {
+        mLatch = new CountDownLatch(NUMBER_OF_THREADS);
+    }
+
+    /** Print the outputString to the display. */
+    public void print(String outputString) {
+        /** Print to the console window. */
+        mOutput.println(outputString);
+    }
+
+    /** Indicate that a game thread has finished running. */
+    public void done() {
+        mLatch.countDown();
+    }
+
+    /** Barrier that waits for all the game threads to finish. */
+    public void awaitDone() {
+        try {
+            mLatch.await();
+        } catch (java.lang.InterruptedException e) {
+>>>>>>> upstream/master
         }
     }
 
     /** Returns a string revealing the platform in use. */
+<<<<<<< HEAD
     public String platformName() 
     {
         return System.getProperty("java.specification.vendor");
@@ -69,5 +102,16 @@ public class ConsolePlatformStrategy extends PlatformStrategy
     public void errorLog(String javaFile, String errorMessage) 
     {
         System.out.println(javaFile + " " + errorMessage);
+=======
+    public String platformName() {
+        return System.getProperty("java.specification.vendor");
+    }
+
+    /**
+     * Error log formats the message and displays it for the debugging purposes.
+     */
+    public void errorLog(String javaFile, String errorMessage) {
+        mOutput.println(javaFile + " " + errorMessage);
+>>>>>>> upstream/master
     }
 }
