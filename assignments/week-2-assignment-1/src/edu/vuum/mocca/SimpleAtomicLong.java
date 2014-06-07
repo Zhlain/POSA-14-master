@@ -40,7 +40,9 @@ class SimpleAtomicLong {
 		long value;
 
 		// TODO -- you fill in here
+		mRWLock.readLock().lock();
 		value = this.mValue;
+		mRWLock.readLock().unlock();
 
 		return value;
 	}
