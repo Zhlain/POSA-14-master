@@ -1,10 +1,7 @@
 package edu.vuum.mocca;
 
 import static org.junit.Assert.fail;
-<<<<<<< HEAD
-=======
 import static org.junit.Assert.assertFalse;
->>>>>>> upstream/master
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +9,6 @@ import java.util.ListIterator;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/master
 /**
  * @class PalantirManagerUnitTest
  *
@@ -29,13 +22,8 @@ import org.junit.Test;
  */
 public class PalantirManagerUnitTest {
     /**
-<<<<<<< HEAD
-     * If this is set to true in SynchronizedQueueImpl.java then lots
-     * of debugging output will be generated.
-=======
      * If this is set to true in then lots of debugging output will be
      * generated.
->>>>>>> upstream/master
      */
     public static boolean diagnosticsEnabled = false;
 
@@ -51,14 +39,11 @@ public class PalantirManagerUnitTest {
     static volatile long mMaxActiveThreads = 0;
 
     /**
-<<<<<<< HEAD
-=======
      * Keep track of whether a runtime exception occurs.
      */
     boolean mFailed = false;
 
     /**
->>>>>>> upstream/master
      * Count of the number of Active Threads.
      */
     static SimpleAtomicLong mActiveThreads = new SimpleAtomicLong(0);
@@ -151,11 +136,7 @@ public class PalantirManagerUnitTest {
 
                     if (diagnosticsEnabled)
                         System.out.println(Thread.currentThread().getName()
-<<<<<<< HEAD
-                                           + " is releasing the " 
-=======
                                            + " has released the "
->>>>>>> upstream/master
                                            + palantir.name() 
                                            + " palantir");
                 }
@@ -245,24 +226,7 @@ public class PalantirManagerUnitTest {
 
             // Start all the Threads that Middle-Earth Beings use to
             // gaze into the Palantir.
-            for (ListIterator<Thread> iterator = palantirUsers.listIterator(); 
-<<<<<<< HEAD
-                 iterator.hasNext();)
-                iterator.next().start();
-
-            // Barrier synchronization that waits for all the Threads
-            // to exit.
-            for (ListIterator<Thread> iterator = palantirUsers.listIterator(); iterator
-                     .hasNext();)
-                iterator.next().join();
-
-            if (diagnosticsEnabled)            
-                System.out.println("Finishing PalantirManagerTest");
-        } catch (Exception e) {
-            fail("The Exception "
-                 + e.getMessage()
-                 + " was thrown");
-=======
+            for (ListIterator<Thread> iterator = palantirUsers.listIterator();
                  iterator.hasNext();
                  ) {
                 Thread t = iterator.next();
@@ -301,7 +265,6 @@ public class PalantirManagerUnitTest {
             fail("A "
                  + e.getMessage()
                  + " Exception was thrown");
->>>>>>> upstream/master
         }
     }
 
