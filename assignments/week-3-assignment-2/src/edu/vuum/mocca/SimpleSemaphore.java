@@ -81,7 +81,8 @@ public class SimpleSemaphore {
 		mLock.lock();
 		try {
 			mPermits++;
-			mCondition.signal();
+			if (mPermits > 0)
+				mCondition.signal();
 		} finally {
 			mLock.unlock();
 		}
